@@ -1,10 +1,9 @@
 package cl.webdevel.casadesalud;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
@@ -13,13 +12,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        WebView webview = new WebView(this);
-//        setContentView(webview);
-//        webview.loadUrl("http://www.webdevel.cl/");
+        WebView webview = new WebView(this);
+        setContentView(webview);
 
-        Uri uri = Uri.parse("http://www.example.com");
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
+        webview.setWebViewClient(new WebViewClient());
+        webview.loadUrl("http://www.casadesalud.cl");
 
     }
 
